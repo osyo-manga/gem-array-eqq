@@ -2,6 +2,11 @@ require "array/eqq"
 
 using Array::Eqq
 
+# 必ず true を返す proc を返す
+def _
+    proc { true }
+end
+
 def fizzbuzz n
     case [n % 3, n % 5]
     # n % 3 === 0 && n % 5 === 0

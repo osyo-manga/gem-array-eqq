@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{Add Array#===}
   spec.description   = %q{Add Array#===}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/osyo-manga/gem-array-eqq"
 
   spec.files         = `git ls-files -z`.split("\x0").reject do |f|
     f.match(%r{^(test|spec|features)/})

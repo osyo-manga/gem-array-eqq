@@ -22,7 +22,44 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+require "array/eqq"
+
+using Array::Eqq
+
+p [1, 2] === [1, 2]
+# => true
+
+p [Integer, String] === [1, "homu"]
+# => true
+
+p [Integer, String] === [1, "homu", 3]
+# => false
+
+
+def _
+    proc { true }
+end
+
+def fizzbuzz n
+    case [n % 3, n % 5]
+    # n % 3 === 0 && n % 5 === 0
+    when [0, 0]
+        "FizzBuzz"
+    # n % 3 === 0
+    when [0, _]
+        "Fizz"
+    # n % 5 === 0
+    when [_, 0]
+        "Buzz"
+    else
+        n
+    end
+end
+
+p (1..20).map &method(:fizzbuzz)
+# => [1, 2, "Fizz", 4, "Buzz", "Fizz", 7, 8, "Fizz", "Buzz", 11, "Fizz", 13, 14, "FizzBuzz", 16, 17, "Fizz", 19, "Buzz"]
+```
 
 ## Development
 
@@ -32,4 +69,4 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/array-eqq.
+Bug reports and pull requests are welcome on GitHub at https://github.com/osyo-manga/gem-array-eqq.
